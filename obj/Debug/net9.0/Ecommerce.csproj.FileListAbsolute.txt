@@ -266,4 +266,3 @@ D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\obj\Debug\net9.0\refint\Ecom
 D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\obj\Debug\net9.0\Ecommerce.pdb
 D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\obj\Debug\net9.0\Ecommerce.genruntimeconfig.cache
 D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\obj\Debug\net9.0\ref\Ecommerce.dll
-D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
