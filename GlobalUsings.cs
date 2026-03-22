@@ -1,0 +1,11 @@
+﻿global using Ecommerce.Data;
+global using Ecommerce.Models;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Threading;
+global using System.Threading.Tasks;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.AspNetCore.Identity;
+global using Ecommerce.Repositories;
+global using System.Diagnostics;
+global using Microsoft.AspNetCore.Mvc;

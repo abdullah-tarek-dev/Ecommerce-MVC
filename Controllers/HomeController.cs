@@ -1,21 +1,21 @@
-using System.Diagnostics;
-using Ecommerce.Models;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IHomeRepository _homerepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IHomeRepository homerepository)
         {
             _logger = logger;
+            _homerepository = homerepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(string sterm ="" , int generyid=0)
         {
-            return View();
+            var books =await _homerepository.GetBooksAsync(sterm , generyid);
+            return View(books);
         }
 
         public IActionResult Privacy()

@@ -11,6 +11,9 @@ namespace Ecommerce.Models
         [Required]
         [MaxLength(40)]
         public string? BookName { get; set; }
+        [Required]
+        [MaxLength(40)]
+        public string? AuthorName { get; set; }
 
         public string? ImageUrl { get; set; }
         [Required]
@@ -20,6 +23,9 @@ namespace Ecommerce.Models
         public Genre Genre { get; set; }
         public List<OrderDetail> OrderDetails { get; set; }
         public List<CartDetail> CartDetails { get; set; }
+
+        [NotMapped]
+        public string ? GenreName { get; set; }
 
 
     }

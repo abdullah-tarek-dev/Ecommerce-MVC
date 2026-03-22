@@ -1,7 +1,3 @@
-using System;
-using Ecommerce.Data;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce
 {
@@ -25,6 +21,7 @@ namespace Ecommerce
                 .AddDefaultTokenProviders()
                 ;
             builder.Services.AddControllersWithViews();
+            builder.Services.AddTransient<IHomeRepository, HomeRepository>();
 
             var app = builder.Build();
 

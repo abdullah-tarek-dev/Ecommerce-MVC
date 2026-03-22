@@ -389,7 +389,6 @@ D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\bin\Debug\net9.0\tr\Microsof
 D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\bin\Debug\net9.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
-D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\bin\Debug\net9.0\Azure.Core.dll
 D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\bin\Debug\net9.0\Azure.Identity.dll
 D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -442,3 +441,4 @@ D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\bin\Debug\net9.0\runtimes\wi
 D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\bin\Debug\net9.0\runtimes\win-x86\native\e_sqlite3.dll
 D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\obj\Debug\net9.0\compressed\7h2jo936en-evtxl8ohto.gz
+D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

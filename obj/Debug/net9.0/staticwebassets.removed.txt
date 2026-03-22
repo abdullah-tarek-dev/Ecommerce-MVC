@@ -1,2 +1,0 @@
-D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\wwwroot\css\site.css
-D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\wwwroot\js\site.js
