@@ -1,4 +1,6 @@
 
+using Ecommerce.Models.DTOs;
+
 namespace Ecommerce.Controllers
 {
     public class HomeController : Controller
@@ -14,8 +16,17 @@ namespace Ecommerce.Controllers
 
         public async Task<IActionResult> Index(string sterm ="" , int generyid=0)
         {
+           
             var books =await _homerepository.GetBooksAsync(sterm , generyid);
-            return View(books);
+            var genres = await _homerepository.GetGenresAsync();
+            BookDisplayModel bookmodel = new BookDisplayModel
+            {
+                Books = books,
+                Genres = genres,
+                sterm = sterm,
+                GenreId = generyid
+            };
+            return View(bookmodel);
         }
 
         public IActionResult Privacy()

@@ -10,5 +10,8 @@
             string searchTerm = "",
             int genreId = 0,
             CancellationToken cancellationToken = default);
+
+        Task<IReadOnlyList<Genre>> GetGenresAsync(
+            CancellationToken cancellationToken = default);
     }
 }

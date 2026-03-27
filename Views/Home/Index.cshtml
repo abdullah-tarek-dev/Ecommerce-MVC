@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Book>
+﻿@model BookDisplayModel
 @{
     
 }
@@ -9,21 +9,21 @@
 
 
   <div class="col-12">
-    <label class="visually-hidden" for="inlineFormSelectPref">Genres</label>
-            <select class="form-select" id="generyid">
+            <label class="visually-hidden" for="genreId">Genres</label>
+            <select class="form-select" id="genreId" name="genreId">
       <option selected>Choose...</option>
-      <option value="1">Action</option>
-      <option value="2">Horror</option>
-      <option value="3">Romance</option>
-      <option value="3">Siencefiction</option>
+      @foreach(var genre in Model.Genres)
+                {
+                    <option selected="@(genre.Id == Model.GenreId)" value=@genre.Id>@genre.GenreName</option>
+                }
     </select>
   </div>
 
         <div class="col-12">
-            <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
+            <label class="visually-hidden" for="sterm">Username</label>
             <div class="input-group">
                 <div class="input-group-text"></div>
-                <input type="text" class="form-control" id="sterm" placeholder="Search by title">
+                <input type="text" class="form-control" id="sterm" name="sterm" value="@Model.sterm" placeholder="Search by title">
             </div>
         </div>
 
@@ -37,30 +37,52 @@
 
 
 
-<div class="w-100 d-flex mt-4 flex-wrap" >
-	@foreach (var book in Model)
-    {
-       
-    <div class="card mx-2 mb-4" style="width: 16rem;">
-            @if (string.IsNullOrEmpty(book.ImageUrl))
-            {
-                <img src="/images/img.jpg" />
-            }
-            else
-            {
-                <img src="/images/img.jpg" />
-                // نفس الصورة لكل الكتب مؤقتًا
-            }
-        <div class="card-body">
-                @* <p>@book.ImageUrl</p> *@
-            <h5 class="card-title">@book.BookName</h5>
-            <p class="card-text">
-					Genre:@book.Genre
-					Author:@book.AuthorName
-					Price:@book.Price
-            </p>
-            <a href="#" class="btn btn-primary">Add To Card</a>
-        </div>
+<div class="container mt-5">
+    <div class="row g-4">
+
+        @foreach (var book in Model.Books)
+        {
+            <div class="col-md-3 col-sm-6">
+
+                <div class="card h-100 shadow-sm border-0">
+
+                    <!-- Image -->
+                    @* <img src="@(string.IsNullOrEmpty(book.ImageUrl) ? "/images/img.jpg" : book.ImageUrl)"
+                         class="card-img-top"
+                         style="height:220px; object-fit:cover;" /> *@
+                         <img src="/images/img.jpg"
+                         class="card-img-top"
+                         style="height:220px; object-fit:cover;"
+                         />
+
+                    <!-- Body -->
+                    <div class="card-body d-flex flex-column">
+
+                        <h6 class="card-title fw-bold">@book.BookName</h6>
+
+                        <p class="text-muted mb-1" style="font-size:14px;">
+                            @book.GenreName
+                        </p>
+
+                        <p class="text-muted mb-2" style="font-size:13px;">
+                            by @book.AuthorName
+                        </p>
+
+                        <!-- Price -->
+                        <h5 class="text-primary fw-bold mb-3">
+                            @book.Price EGP
+                        </h5>
+
+                        <!-- Button -->
+                        <a href="#" class="btn btn-dark mt-auto w-100">
+                            <i class="bi bi-cart"></i> Add To Cart
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        }
+
     </div>
-    }
 </div>

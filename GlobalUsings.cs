@@ -9,3 +9,4 @@ global using Microsoft.AspNetCore.Identity;
 global using Ecommerce.Repositories;
 global using System.Diagnostics;
 global using Microsoft.AspNetCore.Mvc;
+global using Ecommerce.Models.DTOs;

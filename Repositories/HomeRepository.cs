@@ -10,6 +10,12 @@ namespace Ecommerce.Repositories
             _context = context;
         }
 
+        public async Task<IReadOnlyList<Genre>> GetGenresAsync(CancellationToken cancellationToken = default)
+        {
+            return await _context.Genres
+                .AsNoTracking()
+                .ToListAsync(cancellationToken);
+        }
         /// <summary>
         /// Returns a list of books optionally filtered by a search term and/or genre.
         /// The search is normalized to lower-case for database translation.
