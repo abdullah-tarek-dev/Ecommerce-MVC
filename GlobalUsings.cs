@@ -10,3 +10,5 @@ global using Ecommerce.Repositories;
 global using System.Diagnostics;
 global using Microsoft.AspNetCore.Mvc;
 global using Ecommerce.Models.DTOs;
+ global using System.ComponentModel.DataAnnotations;
+global using System.ComponentModel.DataAnnotations.Schema;

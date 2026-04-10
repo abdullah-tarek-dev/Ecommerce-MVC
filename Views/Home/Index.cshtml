@@ -11,7 +11,7 @@
   <div class="col-12">
             <label class="visually-hidden" for="genreId">Genres</label>
             <select class="form-select" id="genreId" name="genreId">
-      <option selected>Choose...</option>
+      <option selected>Genre</option>
       @foreach(var genre in Model.Genres)
                 {
                     <option selected="@(genre.Id == Model.GenreId)" value=@genre.Id>@genre.GenreName</option>
@@ -29,6 +29,7 @@
 
   <div class="col-12">
     <button type="submit" class="btn btn-primary">Search</button>
+    <a href="/Home/Index" class="btn btn-dark">Reset</a>
   </div>
 </form>
 
@@ -74,9 +75,9 @@
                         </h5>
 
                         <!-- Button -->
-                        <a href="#" class="btn btn-dark mt-auto w-100">
+                        <button type="button" onclick="add(@book.Id)" class="btn btn-dark mt-auto w-100">
                             <i class="bi bi-cart"></i> Add To Cart
-                        </a>
+                        </button>
 
                     </div>
                 </div>
@@ -86,3 +87,29 @@
 
     </div>
 </div>
+
+
+
+
+
+@section Scripts {
+    <script>
+        
+       async function add(bookId){
+           try{
+                var response = await fetch(`/Cart/AddItem?bookId=${bookId}`)
+                if(response.status==200){
+                var result = await response.json();
+                console.log(result);
+                var cartCountEl = document.getElementById("cartCount");
+                cartCountEl.innerHTML = result;
+                }
+           }
+           catch(err){
+               console.log(err)
+           }
+        }
+
+    </script>
+}
+

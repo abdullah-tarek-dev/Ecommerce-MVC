@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
+﻿
 namespace Ecommerce.Models
 {
 
@@ -12,6 +10,7 @@ namespace Ecommerce.Models
         public string UserId { get; set; }
 
         public bool IsDeleted { get; set; } = false;
+        public ICollection<CartDetail> cartDetails { get; set; }
         
     }
 }
