@@ -1,4 +1,6 @@
+wwwroot\css\bootstrap.min.css
 wwwroot\favicon.ico
+wwwroot\images\img.jpg
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
@@ -59,8 +61,6 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\css\bootstrap.min.css
-wwwroot\images\img.jpg
 D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\wwwroot\favicon.ico
 D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\wwwroot\css\bootstrap.min.css
 D:\2027\Back\projects\Ecommerce\Ecommerce\Ecommerce\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css

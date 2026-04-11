@@ -1,60 +1,95 @@
-﻿
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>EBookStore - Online book store</title>
-	<link href="/css/bootstrap.min.css "rel=" stylesheet">
+
+    <!-- ✅ Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- ✅ Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
+
 <body>
+
+    <!-- 🔷 Navbar -->
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
+
             <a class="navbar-brand" href="/Home/Index">EBookStore</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarColor01">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarColor01">
+
+                <!-- 🏠 Left Menu -->
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/Home/Index">
-                            Home
-                            <span class="visually-hidden">(current)</span>
-                        </a>
+                        <a class="nav-link active" href="/Home/Index">Home</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="/Home/Privacy">Privacy</a>
                     </li>
-@*                
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
-                    </li> *@
                 </ul>
-                <partial name ="_LoginPartial"/>
+
+                <!-- 👤 Login Partial -->
+                <partial name="_LoginPartial" />
+
             </div>
         </div>
     </nav>
-    <div class=" container">
-		@RenderBody()
+
+    <!-- 📦 Content -->
+    <div class="container mt-4">
+        @RenderBody()
     </div>
-</body>
-<!-- 1️⃣ jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!-- 2️⃣ Validation -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <!-- ================= Scripts ================= -->
+    <!-- ❌ (اختياري) لو مش محتاج jQuery احذفه -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <!-- Validation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
 
-<!-- 3️⃣ Unobtrusive -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-</html>
+    <!-- ================= Cart Script ================= -->
+
+    <script>
+        // 🛒 تحميل عدد الكارت (آمن بدون Redirect)
+        async function loadCartCount() {
+            try {
+                const cartCountEl = document.getElementById("cartCount");
+
+                // لو العنصر مش موجود → مفيش داعي نكمل
+                if (!cartCountEl) return;
+
+                const response = await fetch('/Cart/GetCartItemCount');
+
+                if (response.ok) {
+                    const count = await response.json();
+                    cartCountEl.textContent = count;
+                }
+
+            } catch (err) {
+                console.error("Cart error:", err);
+            }
+        }
+
+        // 🔥 تشغيل بعد تحميل الصفحة
+        document.addEventListener("DOMContentLoaded", loadCartCount);
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
